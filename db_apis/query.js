@@ -2,36 +2,7 @@ const oracledb = require('oracledb');
 const database = require('../services/database.js');
 
 const baseQuery =
-  `SELECT NR_CNPJFILIAL,
-            CD_SERIELEGAL,
-            NR_NF,
-            CD_MODELONF,
-            NR_CNPJCPFPES,
-            DT_EMISSAO,
-            DT_SAIENT,
-            HR_SAIENT,
-            TP_ORIGEM,
-            TP_OPERACAO,
-            TP_SITUACAO,
-            TP_NOTA,
-            CD_CFOP,
-            CD_EQUIPAMENTO,
-            NR_CRO,
-            CD_TRANSACAO,
-            CD_CONDPGTO,
-            TP_FRETE,
-            DT_AUTORIZACAO,
-            HR_AUTORIZACAO,
-            VL_TOTALNF,
-            DS_LOGRADOURO,
-            DS_NUMERO,
-            DS_COMPLEMENTO,
-            NR_CEP,
-            NM_BAIRRO,
-            NM_CIDADE,
-            CD_UF,
-            CD_PAIS
-FROM INT_NF`;
+  `QUERY_HERE`;
 
 async function find(context) {
   let query = baseQuery;
@@ -51,12 +22,7 @@ async function find(context) {
 module.exports.find = find;
 
 const baseQuery2 =
-  `SELECT TIPO, 
-  SUM(AGUARDANDO)  "AGUARDANDO",
-  SUM(PENDENTE)  "PENDENTE", 
-  SUM(IMPORTADO)  "IMPORTADO", 
-  SUM(ERRO) "ERRO" 
-FROM VW_STATUS_CTRL GROUP BY TIPO`;
+  `QUERY_HERE`;
 
 async function sumimports(context) {
   let query = baseQuery2;
@@ -76,36 +42,7 @@ async function sumimports(context) {
 module.exports.sumimports = sumimports;
 
 const updateSql =
- `update INT_NF set NR_CNPJFILIAL = :NR_CNPJFILIAL,
-    CD_SERIELEGAL = :CD_SERIELEGAL,
-    NR_NF = :NR_NF,
-    CD_MODELONF = :CD_MODELONF,
-    NR_CNPJCPFPES = :NR_CNPJCPFPES,
-    DT_EMISSAO = :DT_EMISSAO,
-    DT_SAIENT = :DT_SAIENT,
-    HR_SAIENT = :HR_SAIENT,
-    TP_ORIGEM = :TP_ORIGEM,
-    TP_OPERACAO = :TP_OPERACAO,
-    TP_SITUACAO = :TP_SITUACAO,
-    TP_NOTA = :TP_NOTA,
-    CD_CFOP = :CD_CFOP,
-    CD_EQUIPAMENTO = :CD_EQUIPAMENTO,
-    NR_CRO = :NR_CRO,
-    CD_TRANSACAO = :CD_TRANSACAO,
-    CD_CONDPGTO = :CD_CONDPGTO,
-    TP_FRETE = :TP_FRETE,
-    DT_AUTORIZACAO = :DT_AUTORIZACAO,
-    HR_AUTORIZACAO = :HR_AUTORIZACAO,
-    VL_TOTALNF = :VL_TOTALNF,
-    DS_LOGRADOURO = :DS_LOGRADOURO,
-    DS_NUMERO = :DS_NUMERO,
-    DS_COMPLEMENTO = :DS_COMPLEMENTO,
-    NR_CEP = :NR_CEP,
-    NM_BAIRRO = :NM_BAIRRO,
-    NM_CIDADE = :NM_CIDADE,
-    CD_UF = :CD_UF,
-    CD_PAIS = :CD_PAIS,
-  where NR_NF = :NR_NF`;
+ `QUERY_HERE`;
 
   const options = {
     dir: oracledb.BIND_OUT,
@@ -126,21 +63,7 @@ async function update(emp) {
 module.exports.update = update;
 
  const createSql =
-  `INSERT INTO GLB_DEPARA (
-    CD_SISTEMA,
-    NR_CNPJ,
-    NM_CAMPO,
-    NR_SEQ,
-    VL_SATELITE,
-    VL_ERP
-  ) values (
-    :CD_SISTEMA,
-    :NR_CNPJ,
-    :NM_CAMPO,
-    :NR_SEQ,
-    :VL_SATELITE,
-    :VL_ERP
-  )`;
+  `QUERY_HERE`;
 
 async function create(emp) {
   const integration = Object.assign({}, emp);
@@ -161,67 +84,7 @@ module.exports.create = create;
 
 
 const insertSql =
- `insert into INT_NF (
-    NR_CNPJFILIAL,
-    CD_SERIELEGAL,
-    NR_NF,
-    CD_MODELONF,
-    NR_CNPJCPFPES,
-    DT_EMISSAO,
-    DT_SAIENT,
-    HR_SAIENT,
-    TP_ORIGEM,
-    TP_OPERACAO,
-    TP_SITUACAO,
-    TP_NOTA,
-    CD_CFOP,
-    CD_EQUIPAMENTO,
-    NR_CRO,
-    CD_TRANSACAO,
-    CD_CONDPGTO,
-    TP_FRETE,
-    DT_AUTORIZACAO,
-    HR_AUTORIZACAO,
-    VL_TOTALNF,
-    DS_LOGRADOURO,
-    DS_NUMERO,
-    DS_COMPLEMENTO,
-    NR_CEP,
-    NM_BAIRRO,
-    NM_CIDADE,
-    CD_UF,
-    CD_PAIS
-  ) values (
-    :NR_CNPJFILIAL,
-    :CD_SERIELEGAL,
-    :NR_NF,
-    :CD_MODELONF,
-    :NR_CNPJCPFPES,
-    :DT_EMISSAO,
-    :DT_SAIENT,
-    :HR_SAIENT,
-    :TP_ORIGEM,
-    :TP_OPERACAO,
-    :TP_SITUACAO,
-    :TP_NOTA,
-    :CD_CFOP,
-    :CD_EQUIPAMENTO,
-    :NR_CRO,
-    :CD_TRANSACAO,
-    :CD_CONDPGTO,
-    :TP_FRETE,
-    :DT_AUTORIZACAO,
-    :HR_AUTORIZACAO,
-    :VL_TOTALNF,
-    :DS_LOGRADOURO,
-    :DS_NUMERO,
-    :DS_COMPLEMENTO,
-    :NR_CEP,
-    :NM_BAIRRO,
-    :NM_CIDADE,
-    :CD_UF,
-    :CD_PAIS
-  )`;
+ `QUERY_HERE`;
 
 
 async function insert(emp) {
