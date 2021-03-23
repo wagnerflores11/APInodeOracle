@@ -1,0 +1,38 @@
+
+
+***********************************************************************
+Fatal NI connect error 12541, connecting to:
+ (DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=172.16.1.40)(PORT=1521)))(CONNECT_DATA=(SERVER=DEDICATED)(SERVICE_NAME=desenv)(CID=(PROGRAM=C:\Program?Files\nodejs\node.exe)(HOST=AUN2NBTIC22)(USER=wagner.flores))))
+
+  VERSION INFORMATION:
+	TNS for 64-bit Windows: Version 12.2.0.1.0 - Production
+	Windows NT TCP/IP NT Protocol Adapter for 64-bit Windows: Version 12.2.0.1.0 - Production
+  Time: 22-FEV-2021 13:31:39
+  Tracing not turned on.
+  Tns error struct:
+    ns main err code: 12541
+    TNS-12541: TNS:não há listener
+    ns secondary err code: 12560
+    nt main err code: 511
+    TNS-00511: Não há listener
+    nt secondary err code: 61
+    nt OS err code: 0
+
+
+***********************************************************************
+Fatal NI connect error 12541, connecting to:
+ (DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=172.16.1.40)(PORT=1521)))(CONNECT_DATA=(SERVER=DEDICATED)(SERVICE_NAME=desenv)(CID=(PROGRAM=C:\Program?Files\nodejs\node.exe)(HOST=AUN2NBTIC22)(USER=wagner.flores))))
+
+  VERSION INFORMATION:
+	TNS for 64-bit Windows: Version 12.2.0.1.0 - Production
+	Windows NT TCP/IP NT Protocol Adapter for 64-bit Windows: Version 12.2.0.1.0 - Production
+  Time: 22-FEV-2021 13:33:18
+  Tracing not turned on.
+  Tns error struct:
+    ns main err code: 12541
+    TNS-12541: TNS:não há listener
+    ns secondary err code: 12560
+    nt main err code: 511
+    TNS-00511: Não há listener
+    nt secondary err code: 61
+    nt OS err code: 0
